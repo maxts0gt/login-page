@@ -1,0 +1,75 @@
+.formInput {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: var(--card);
+  padding: 12px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  width: 100%;
+  border: var(--input-border) 1px solid;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  color: inherit;
+}
+
+/* override autofill background style */
+
+.formInput:-webkit-autofill,
+.formInput:-webkit-autofill:hover,
+.formInput:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+  font-family: Poppins, sans-serif !important;
+  -webkit-text-fill-color: var(--text) !important;
+}
+
+.formInput:autofill,
+.formInput:autofill:hover,
+.formInput:autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+  font-family: Poppins, sans-serif !important;
+  font-size: 1rem !important;
+  -webkit-text-fill-color: var(--text) !important;
+}
+
+/* override autofill font style */
+.formInput:-webkit-autofill::first-line {
+  font: 400 1rem "Poppins", sans-serif !important;
+  -webkit-text-fill-color: var(--text) !important;
+}
+.formInput:autofill::first-line {
+  font: 400 1rem "Poppins", sans-serif !important;
+  -webkit-text-fill-color: var(--text) !important;
+}
+
+.formInput:focus {
+  outline: none;
+  border: var(--primary) 1px solid;
+}
+
+.formInput::placeholder,
+.formInput::-webkit-input-placeholder {
+  color: var(--label-text);
+  font-weight: 300;
+}
+
+.formInput:-ms-input-placeholder {
+  color: var(--label-text);
+  font-weight: 300;
+}
+
+.error {
+  color: var(--error-text);
+  font-size: 14px;
+  display: none;
+}
+
+.formInput:invalid[focused="true"] {
+  border: var(--error-text) 1px solid;
+}
+
+.formInput:invalid[focused="true"] + .error {
+  display: block;
+}
